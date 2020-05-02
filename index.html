@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Calculateur Photovoltaique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculateur Photovoltaique</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+    <form action="index.html" method="post" id="formName" name="calculeForm">
+      <h1>Calculateur Photovoltaique</h1>
+      <fieldset>
+          <legend>Localisation</legend>
+        <input type="text" id="lat" class="local" name="lat" placeholder="Veuillez indiquer Latitude" pattern="-?\d+(,\d{2})?">
+        <input type="text" id="long" class="local" name="long" placeholder="Veuillez indiquer longtitude" pattern="-?\d+(,\d{2})?"   >
+
+        <legend>Système <br> <small> Veuillez modifier les entrées ci-dessous pour exécuter la simulation</small> </legend>
+        <label for="Local">Surface disponible (m<sup>2</sup>):</label>
+        <input type="text" id="surface" name="surface" placeholder="60"   >
+
+        <input type="radio" id="tdp" name="chktype" checked="checked" value="panneau"  /> <label for="tdp" class="light"> Type de panneau </label>
+       <div id="selecttype" ><br>
+                 <select id="mySelect" name="typeP"  >
+                   <optgroup label="Votre Type De Panneau">
+                     <option value="silicium polycristallin">Silicium polycristallin</option>
+                     <option value="silicium monocristallin">Silicium monocristallin</option>
+                     <option value="couche mince">Couche mince </option>
+                   </optgroup>
+                 </select>
+       </div>
+        <input type="radio" id="rdp" name="chktype"  value="rendement"   /> <label for="rdp" class="light"> Rendement du panneau (%) </label>
+
+        <div id="rendement" style="display: none"> <br> <input type="text" id="rend" name="rendement" placeholder="16.5"  > </div>
+
+    </fieldset>
+      <button id="Btn" type="button">Calculer</button>
+      <div id="result" style="display: none">
+        <h2> Le Potentiel Technique (kWh/an) est : <span id="resultat"></span> </h2>
+
+      </div>
+    </form>
+
+
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js'>
+
+</script>
+</script>
+<script type="text/javascript" src="script.js">
+
+</script>
+<script type="text/javascript">
+
+// $("input[name='chktype']").click(function () {
+//                                                if ($("#rdp").is(":checked")) {
+//                                                    $("#rendement").show();
+//                                                    $("#selecttype").hide();
+//                                                } else {
+//                                                    $("#rendement").hide();
+//                                                    $("#selecttype").show();
+//                                                }
+// });
+
+// $( "#Btn" ).click(function() {
+// var gridcode = 1735;
+// var result="";
+// var select = $("#mySelect").val();
+// var surface = $("#surface").val();
+// var lat = $("#lat").val();
+// var long = $("#long").val();
+// var type = $('input[name=chktype]:checked', '#formName').val()
+//
+// if (type == "panneau")
+// {
+//   if (select == "silicium polycristallin")
+//   {
+//     // Silicium polycristallin 15%
+//       result = (surface * gridcode * (15/5))/100;
+//   }
+//
+//   else if (select == "silicium monocristallin")
+//   {
+//     // silicium monocristallin 19%
+//   result = (surface * gridcode * (19/5))/100;
+//   }
+//   else if (select == "couche mince")
+//   {
+//     // couche mince 10%
+//    result = (surface * gridcode * (10/5))/100;
+//   }
+// }
+//
+// else if (type == "rendement" )
+//   {
+//     var rendement = $("#rend").val();
+//     result = (surface * gridcode *(rendement/5))/100;
+//   }
+//
+// $("#result").show();
+// $("#resultat").html(result);
+// });
+
+</script>
+</body>
+</html>
